@@ -1,0 +1,11 @@
+{
+  "name": "mail_trigger",
+  "version": "0.0.1",
+  "dependencies": {
+    "mail-listener": "~0.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GeorgeSpark-Stahl/mail_trigger.git"
+  }
+}
