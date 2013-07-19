@@ -1,8 +1,9 @@
 {
   "name": "mail_trigger",
   "version": "0.0.1",
+  "author": "George Spark-Stahl <mr.marmot@gmail.com> (http://yourcatisonfire.com)",
   "dependencies": {
-    "mail-listener": "ssh+https://github.com/GeorgeSpark-Stahl/mail-listener.git#master"
+    "mail-listener": "ssh+https://github.com/GeorgeSpark-Stahl/mail-listener.git"
   },
   "repository": {
     "type": "git",
