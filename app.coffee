@@ -1,12 +1,14 @@
-
 MailListener = require "mail-listener"
 rules = require "./rules"
 
+username = process.env.EMAIL_USERNAME ? ""
+password = process.env.EMAIL_PASSWORD ? ""
+host     = process.env.EMAIL_HOST ? ""
 
 mailListener = new MailListener
-  username: process.env.EMAIL_USERNAME ? ""
-  password: process.env.EMAIL_PASSWORD ? ""
-  host: "imap-host"
+  username: username
+  password: password
+  host: host
   port: 993 # imap port
   secure: true # use secure connection
   mailbox: "INBOX" # mailbox to monitor
