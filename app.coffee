@@ -1,5 +1,7 @@
 
 MailListener = require "mail-listener"
+rules = require "./rules"
+
 
 mailListener = new MailListener
   username: process.env.EMAIL_USERNAME ? ""
@@ -22,12 +24,14 @@ mailListener.on "server:connected", ->
 # subscribe to error events
 mailListener.on "error", (err) ->
   console.log "error happened", err
+  mailListener.stop()
 
 # mail arrived and was parsed by parser 
 mailListener.on "mail:parsed", (mail) ->
-  # do something with mail object including attachments
-  console.log "parsed email with attachment", mail.attachments
-  ## mail processing code goes here
+  rule mail for rule in rules
 
-## it's possible to access imap object from node-imap library for performing additional actions. E.x.
-mailListener.imap.move :msguids, :mailboxes, ->
+process.on 'SIGINT', () =>
+  mailListener.stop()
+
+mailListener.on "server:disconnected", () =>
+  console.log "imap disconnected"
