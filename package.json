@@ -2,7 +2,7 @@
   "name": "mail_trigger",
   "version": "0.0.1",
   "dependencies": {
-    "mail-listener": "https://github.com/GeorgeSpark-Stahl/mail-listener.git"
+    "mail-listener": "ssh+https://github.com/GeorgeSpark-Stahl/mail-listener.git#master"
   },
   "repository": {
     "type": "git",
